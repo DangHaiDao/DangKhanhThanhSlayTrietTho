@@ -1,1 +1,13 @@
 /*Thọ*/
+.btn-warning {
+                background-color: #FFC107;
+                width: 180px;
+                height: 50px;
+                border-radius: 4px;
+                border: 1px solid black;
+                font-family: Arial, Helvetica, sans-serif;
+
+            }
+.btn-warning:hover {
+                background-color: #E0AA07;
+            }
