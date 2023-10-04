@@ -9,24 +9,6 @@ table{
     transform: translateX(50%);
     right: 50%;
 }
-.text-divider {
-    display: flex;
-    align-items: center;
-    --text-divider-gap: 1rem;
-  }
-  .text-divider::before,
-  .text-divider::after {
-    content: '';
-    height: 1px;
-    background-color: #333;
-    flex-grow: 6;
-  }
-  .text-divider::before {
-    margin-right:0rem;
-  }
-  .text-divider::after {
-    margin-left: 0rem;
-  }
   .text-b{
     color:blue;
 
