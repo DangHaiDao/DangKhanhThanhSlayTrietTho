@@ -1,1 +1,76 @@
-
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./cau3.css">
+    <title>Cau 3</title>
+    <style>
+        *{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+body{
+    position: relative;
+}
+form{
+    position: absolute;
+    top: 100px;
+    left: 100px;
+    transform: translateX(100%) translateY(50%);
+}
+table {
+    background-color: rgb(58, 207, 207);
+    border-collapse: collapse;
+}
+th{
+    font-size: 20px;
+}
+td{
+    padding: 4px;
+}
+input[type="text"]{
+    padding: 4px;
+    font-size: 14px;
+    width: 200px;
+}
+input[type="submit"]{
+    padding: 4px;
+    width: 50px;
+    cursor: pointer;
+}
+    </style>
+</head>
+<body>
+    <form action="">
+        <table width="400px" height="200px">
+            <tr>
+                <th colspan="2" align="center">Máy tính</th>
+            </tr>
+            <tr>
+                <td>Số thứ nhất</td>
+                <td><input type="text"></td>
+            </tr>
+            <tr>
+                <td>Số thứ hai</td>
+                <td><input type="text"></td>
+            </tr>
+            <tr>
+                <td colspan="2" align="center">
+                    <input type="submit" value="Cộng">
+                    <input type="submit" value="Trừ">
+                    <input type="submit" value="Nhân">
+                    <input type="submit" value="Chia">
+                </td>
+                
+            </tr>
+            <tr>
+                <td>Kết quả</td>
+                <td><input type="text"></td>
+            </tr>
+        </table>
+    </form>
+</body>
+</html>
