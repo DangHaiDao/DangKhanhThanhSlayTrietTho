@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./cau6.css">
+    <title>Document</title>
+    <style>
+        body{
+    position: relative;
+}
+
+form{
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    transform: translateY(140%);
+
+
+    display:inline-block;
+    border: 1px solid black;
+    background-color:#FFEDCA;
+    padding: 10px;
+
+}
+table{
+    width: 100%;
+    padding: 10px;
+    border:2px solid #456879 ;
+    border-collapse:collapse ;
+}
+tr{
+    border: 2px solid #456879;
+}
+td{
+    border: 2px solid #456879;
+    padding: 4px 4px;
+    color: blue;
+}
+input{
+    padding: 4px;
+}
+span{
+    color: black ;
+}
+    </style>
+</head>
+<body>
+    <form action="">
+                <h1>Phiếu đăng ký tham gia dự thưởng</h1>
+        <table>
+            <tr>
+                <td>Họ và tên</td>
+                <td align="left"><input type="text" placeholder="Nguyễn Văn A"></td>
+            </tr>
+            <tr>
+                <td colspan="1">Địa chỉ</td>
+                <td><input style="width: 95%;" type="text" placeholder="abc, xyz, jqk"></td>
+            </tr>
+            <tr>
+                <td>Điện thoại</td>
+                <td><input type="text" placeholder="09xxxxxxxx"></td>
+            </tr>
+            <tr>
+                <td>Phái</td>
+                <td>
+                    <input type="radio" name="phai"><span>Nam</span>
+                    <input type="radio" name="phai"> <span>Nu</span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Sản phẩm
+                </td>
+                <td>
+                    <select name="" multiple>
+                        <option value="">Iphone 11 Pro Max</option>
+                        <option value="">Samsung Galaxy Note 20</option>
+                        <option value="">OPPO A53</option>
+                        <option value="">OPPO A53</option>
+                        <option value="">OPPO A53</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Dự đoán
+                </td>
+                <td>
+                    <input type="number">
+                </td>
+            </tr>
+            <tr>
+                <td colspan="3" align="center"><input type="submit" value="Đăng ký"></td>
+            </tr>
+        </table>
+    </form>
+</body>
+</html>
