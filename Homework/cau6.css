@@ -1,0 +1,37 @@
+body{
+    position: relative;
+}
+
+form{
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    transform: translateY(140%);
+
+
+    display:inline-block;
+    border: 1px solid black;
+    background-color:#FFEDCA;
+    padding: 10px;
+
+}
+table{
+    width: 100%;
+    padding: 10px;
+    border:2px solid #456879 ;
+    border-collapse:collapse ;
+}
+tr{
+    border: 2px solid #456879;
+}
+td{
+    border: 2px solid #456879;
+    padding: 4px 4px;
+    color: blue;
+}
+input{
+    padding: 4px;
+}
+span{
+    color: black ;
+}
