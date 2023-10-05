@@ -1,0 +1,38 @@
+li {
+    display: inline-block;
+    padding: 10px;
+    background-image: linear-gradient(#E92EF7, #FED0AE);
+    height: 35px;
+    width: 100px;
+    text-align: center;
+    position: relative;
+    margin: 0;
+}
+li:hover {
+    color: #FED0AE;
+}
+.dropdown {
+    display: none;
+    position: absolute;
+    top: 55px;
+    left: 0;
+    background-color: #fff;
+    border: 1px solid #ccc;
+}
+li:hover .dropdown {
+    display: block;
+}
+.dropdown li {
+    display: block;
+    width: 100px;
+    text-align: center;
+    padding: 5px 10px;
+}
+.dropdown li:hover {
+    background-color: #FED0AE;
+    color: #fff;
+}
+li ul {
+    /* margin: 0; */
+    padding: 0;
+}
