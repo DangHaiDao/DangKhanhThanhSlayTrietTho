@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="#" method="get">
+        <table border="">
+            <tr>
+                <td colspan="2">
+                    <h3 align="center">Kết quả</h3>
+                </td>
+            </tr>
+            <tr>
+                <td width="150px">
+                    <p>Chiều dài</p>
+                </td>
+                <td>
+                    <input type="text" name="chieudai">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <p>Chiều rộng</p>
+                </td>
+                <td>
+                    <input type="text" name="chieurong">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <p>Chiều cao</p>
+                </td>
+                <td>
+                    <input type="text" name="chieucao">
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2" align="center">
+                    <input type="submit" value="Tính" name="submit">
+                </td>
+            </tr>
+        </table>
+    </form>
+</body>
+</html>
+<?php 
+class HinhLapPhuong {
+    private $cao, $dai, $rong;
+
+    public function __construct($d, $r, $c) {
+        $this->dai = $d;
+        $this->cao = $c;
+        $this->rong = $r;
+    }
+
+    public function DienTich() {
+       return (($this->dai + $this->rong)*2*$this->cao) + ($this->dai*$this->rong)*2 ;
+    }
+
+    public function TheTich() {
+        return $this->dai * $this->rong * $this->cao;
+    }
+}
+
+if (isset($_GET['submit']) && ($_GET['submit'] == "Tính")) {
+    $dai = (float)$_GET['chieudai'];
+    $rong = (float)$_GET['chieurong'];
+    $cao = (float)$_GET['chieucao'];
+    if ($dai > $rong) {
+    $h1 = new HinhLapPhuong($dai, $rong, $cao);
+    $dientich = $h1->DienTich();
+    $thetich = $h1->TheTich(); 
+    echo '<span class="result">Diện tích: ' . $dientich . '</span>';
+    echo '<span class="result">Thể tích: ' . $thetich . '</span>';
+    }
+}
+?>
+<style>
+        input[type=input]{
+        width:100%;
+    }
+    tr,td{
+        border: 2px solid black;
+    }
+    h3{
+        color:blue;
+    }
+    form{
+        display: flex;
+        justify-content: center;
+    }
+    .result{
+        display: flex;
+        justify-content: center;
+        text-align: center;
+        
+    }
+</style>
