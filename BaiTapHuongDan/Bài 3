@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    form{
+        border: 1px solid black;
+        display: flex;
+        justify-content: center;
+    }
+</style>
+<body>
+    <form action="#" method="get">
+        Nhập tên bạn cần tìm <input type="text" name="tencantim"><br>
+        <input type="submit" value="Tìm" name="submit">
+    </form>
+</body>
+</html>
+<?php 
+    function InMang($array){
+        foreach($array as $ten => $tuoi){
+            echo '<span>' .$ten. "\t" .$tuoi. '</span>';
+        }
+    }
+    function TimTen($array,$str){
+        foreach($array as $ten =>$tuoi){
+            if($ten==$str){
+                return true;
+            }
+        }
+        return false;
+    }
+?>
+<?php 
+ $ban=array("Tuấn"=>21,"Tú"=>19,"Tâm"=>22,"Tùng"=>20);
+ if(isset($_GET['submit'])&&($_GET['submit']=="Tìm"))
+ {
+ $ten = $_GET['tencantim'];
+ if(TimTen($ban,$ten)==true)
+ {
+    echo '<span>Tìm thấy '.$ten.' trong mảng</span><br>';
+ }
+ else
+ {
+ echo '<span>Tìm không thấy<span><br>';
+ }
+ echo "<h3>Xuất mảng</h3>";
+ InMang($ban);
+ }
+?>
