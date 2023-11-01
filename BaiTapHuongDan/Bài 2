@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <script src="https://kit.fontawesome.com/aec8ccd080.js" crossorigin="anonymous"></script>
+    <title>Document</title>
+<style>
+    form{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding-top:20px;
+    }
+    span{
+        display: flex;
+        justify-content: center;
+        text-align: center;
+    }
+    input[type=number]{
+        width:100%;
+    }
+</style>
+</head>
+<body>
+    <form action="#" method="get">
+        <table border="2" cellspacing="0">
+            <tr>
+                <td width="80px">Ngày</td>
+                <td width="150px"><input type="number" name="ngay" min="1" max="31"></td>
+            </tr> 
+            <tr>
+                <td>Tháng</td>
+                <td><input type="number" name="thang" min="1" max="12"></td>
+            </tr> 
+            <tr>
+                <td>Năm</td>
+                <td><input type="input" name="nam"></td>
+            </tr>
+            <tr>
+                <td colspan="2" align="center">
+                    <input type="submit" value="Tổng" name="submit" >
+                </td>
+            </tr> 
+        </table>
+    </form>
+</body>
+</html>
+<?php
+    function NamNhuan($nam){
+      if(($nam%400==0)||(($nam%4==0)&&($nam%100!=0))){
+        return true;
+      }  
+      else{
+        return false;
+      }
+    }
+ ?>
+<?php 
+    if(isset($_GET['submit']) && ($_GET['submit']=="Tổng")){
+       $ngay=(int)$_GET['ngay'];
+       $thang=(int)$_GET['thang'];
+       $nam=(int)$_GET['nam'];
+       $s=$ngay;
+       for($i=1; $i<$thang;$i++){
+        switch($i){
+            case 1: case 3: case 5: case 7: case 8: case 10: case 12: $s=$s+31;
+            break;
+            case 4: case 6: case 9: case 11: $s=$s+30;
+            break;
+            case 2:
+                if(NamNhuan($nam)==true){
+                    $s=$s+29;
+                }
+                else{
+                    $s=$s+28;
+                }
+        }
+    }
+       echo '<span class="result"> Tổng số ngày tính từ đầu năm: '.$s. '</span>';
+    } 
+?>
