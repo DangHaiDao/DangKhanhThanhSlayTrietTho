@@ -1,0 +1,64 @@
+<?php
+class HinhChuNhat {
+    private $dai, $rong;
+
+    public function __construct($d, $r) {
+        $this->dai = $d;
+        $this->rong = $r;
+    }
+
+    public function DienTich() {
+        return $this->dai * $this->rong;
+    }
+
+    public function ChuVi() {
+        return ($this->dai + $this->rong) * 2;
+    }
+}
+
+if (isset($_GET['submit']) && ($_GET['submit'] == "Tính")) {
+    $dai = (float)$_GET['chieudai'];
+    $rong = (float)$_GET['chieurong'];
+    if ($dai > $rong) {
+        $h1 = new HinhChuNhat($dai, $rong);
+        $dientich = $h1->DienTich();
+        $chuvi = $h1->ChuVi();
+        echo'<span class="result">Diện tích: '.$dientich.'</span>';
+        echo'<span class="result">Chu vi:' .$chuvi. '</span>';
+    }
+}
+?>
+<style>
+    form{
+        border: 1px solid black;
+    }
+    input[type=text]{
+        padding-left: 30px;
+        display: flex;
+        justify-content:center;
+        align-items: center;
+    }
+    span{
+        text-align: center;
+    }
+    .result{
+        display: flex;
+        justify-content: center;
+        text-align: center;    
+    }
+</style>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="#" method="get">
+        Chiều dài <input type="text" name="chieudai"> <br>
+        Chiều rộng <input type="text" name="chieurong"> <br>
+        <input type="submit" value="Tính" name="submit">
+    </form>
+</body>
+</html>
