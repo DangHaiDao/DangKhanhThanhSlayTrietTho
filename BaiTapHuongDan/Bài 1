@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Document</title>
+</head>
+<style>
+    input[type=input]{
+        width:100%;
+    }
+    tr,td{
+        border: 2px solid black;
+    }
+    h3{
+        color:blue;
+    }
+    form{
+        display: flex;
+        justify-content: center;
+        padding-top: 30px;
+    }
+    .result{
+        display: flex;
+        justify-content: center;
+        text-align: center;
+        
+    }
+</style>
+<body>
+    <form method="GET" action="#">
+        <table border="2">
+            <tr>
+                <td colspan="2">
+                <h3>Tính diện tích và chu vi hình chữ nhật</h3>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                <label for="chieudai">Chiều dài</label>
+                </td>
+                <td>
+                <input type="input" name="chieudai">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                <label for="chieurong">Chiều rộng</label>
+                </td>
+                <td>
+                <input type="input" name="chieurong">
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2" align="center">
+                    <input type="submit" value="Tính" name="submit" >
+                </td>
+            </tr>
+        </table>
+    </form>
+</body>
+</html>
+<?php 
+    if(isset($_GET['submit']) && ($_GET['submit']=="Tính") ){
+        $dai=$_GET['chieudai'];
+        $rong=$_GET['chieurong'];
+        if($dai>$rong){
+            $dientich=(float)$dai*(float)$rong;
+            $chuvi=((float)$dai+(float)$rong)*2;
+            echo'<span class="result">Diện tích: '.$dientich.'</span>';
+            echo'<span class="result">Chu vi:' .$chuvi. '</span>';
+        }
+    }
+?>
