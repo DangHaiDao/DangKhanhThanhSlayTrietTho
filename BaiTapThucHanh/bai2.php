@@ -1,3 +1,6 @@
+// completed by Do Nguyen Triet
+// chicken
+
 <form method="get" acction="#">
   Nhập tên cần tìm <input type="text" name="tencantim"><br><br>
   <input type="Submit" name="Tim" value="Tìm">
